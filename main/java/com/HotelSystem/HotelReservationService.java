@@ -5,7 +5,6 @@ import java.util.List;
 
 public class HotelReservationService {
     private List<Hotel> hotelList = new ArrayList<>();
-    int result;
 
     public void addHotel(Hotel hotel) {
         hotelList.add(hotel);
