@@ -9,8 +9,8 @@ public class HotelReservationTest {
     public void given3Hotels_whenInvokedFindCheapestHotel_shouldBeAbleToReturnCheapestHotel() {
         HotelReservationService hotelReservationService = new HotelReservationService();
         Hotel Lakewood = new Hotel("Lakewood",110);
-        Hotel Bridgewood = new Hotel("Bridgewood",160);
-        Hotel RidgeWood = new Hotel("Ridgewood",220);
+        Hotel Bridgewood = new Hotel("BridgeWood",160);
+        Hotel RidgeWood = new Hotel("RidgeWood",220);
         hotelReservationService.addHotel(Lakewood);
         hotelReservationService.addHotel(Bridgewood);
         hotelReservationService.addHotel(RidgeWood);
