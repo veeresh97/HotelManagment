@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
-// array list is created
+    // array list is created
 public class HotelReservationService {
-    private List<Hotel> hotelList = new ArrayList<>();
+    List<Hotel> hotelList = new ArrayList<>();
 
     public void addHotel(Hotel hotel)
     {
@@ -22,7 +22,7 @@ public class HotelReservationService {
         return hotelList;
     }
     //counting the days
-    public int countDays(String firstDate, String lastDate) {
+    public int countDays(String firstDate,String lastDate) {
         LocalDate startDate = LocalDate.parse(firstDate);
         LocalDate endDate = LocalDate.parse(lastDate);
         return  (int) ChronoUnit.DAYS.between(startDate,endDate);

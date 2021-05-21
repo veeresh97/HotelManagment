@@ -2,12 +2,22 @@ package com.HotelSystem;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 
 public class HotelReservationTest {
-
-    //here 3 hotels are present with regular rates
+    //added one hotel with regular rate
     @Test
-    public void given3Hotels_whenInvokedFindCheapestHotel_shouldBeAbleToReturnCheapestHotel() {
+    public void givenHotel_whenInvokeAddHotel_shouldBeAbleToAdd() {
+        HotelReservationService hotelReservationService = new HotelReservationService();
+        Hotel hotel = new Hotel("Lakewood",110);
+        hotelReservationService.addHotel(hotel);
+        List hotelList = hotelReservationService.getHotels();
+        System.out.println(hotelList);
+        Assertions.assertTrue(hotelList.contains(hotel));
+    }
+    //3 hotels are present with regular rates
+    @Test
+    public void given3Hotels_whenInvokeFindCheapestHotel_shouldBeAbleToReturnCheapestHotel() {
         HotelReservationService hotelReservationService = new HotelReservationService();
         Hotel Lakewood = new Hotel("Lakewood",110);
         Hotel Bridgewood = new Hotel("BridgeWood",160);
@@ -22,4 +32,15 @@ public class HotelReservationTest {
         System.out.println(result);
         Assertions.assertTrue(hotelReservationService.getHotels().contains(result));
     }
+    //added a weekday and weekend rate for a hotel
+    @Test
+    public void givenHotel_with3Parameters_whenInvokeAddHotel_shouldBeAbleToAdd() {
+        HotelReservationService hotelReservationService = new HotelReservationService();
+        Hotel hotel = new Hotel("Lakewood", 110, 90);
+        hotelReservationService.addHotel(hotel);
+        List hotelList = hotelReservationService.getHotels();
+        System.out.println(hotelList);
+        Assertions.assertTrue(hotelList.contains(hotel));
+    }
 }
+
