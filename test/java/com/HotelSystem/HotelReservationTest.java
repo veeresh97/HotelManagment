@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class HotelReservationTest {
 
+    //here 3 hotels are present with regular rates
     @Test
     public void given3Hotels_whenInvokedFindCheapestHotel_shouldBeAbleToReturnCheapestHotel() {
         HotelReservationService hotelReservationService = new HotelReservationService();
@@ -14,6 +15,7 @@ public class HotelReservationTest {
         hotelReservationService.addHotel(Lakewood);
         hotelReservationService.addHotel(Bridgewood);
         hotelReservationService.addHotel(RidgeWood);
+    //two dates are passed
         int countDays = hotelReservationService.countDays("2020-09-10","2020-09-12");
         System.out.println(countDays);
         Hotel result = hotelReservationService.findCheapestHotel(countDays);
